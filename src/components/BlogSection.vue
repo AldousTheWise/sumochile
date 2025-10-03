@@ -1,59 +1,60 @@
 <script setup>
+import brasilImg from '@/assets/img/brasil.png';
+import fightImg from '@/assets/img/fight.jpg';
+import felipeCastImg from '@/assets/img/felipecasb.png';
+import blogBgImg from '@/assets/img/blogbg.jpg';
+
 const posts = [
     {
         title: 'Campeonato Sudamericano de Sumo, Brasil 2025',
         excerpt: 'Una emocionante aventura para todos los sumotori chilenos',
-        cover: '/img/brasil.png',
+        cover: brasilImg,
         date: '16 mayo 2025'
     },
     {
         title: 'Técnicas de entrenamiento en el Sumo',
         excerpt: 'Ahondamos en las técnicas de entrenamiento que hacen a los mejores sumotori',
-        cover: '/img/fight.jpg',
+        cover: fightImg,
         date: '16 mayo 2025'
     },
     {
         title: 'Nuestro Sensei Felipe Castro',
         excerpt: 'Conversamos con el Sensei Felipe Castro sobre su trayectoria y visión del Sumo en Chile',
-        cover: '/img/felipecasb.png',
+        cover: felipeCastImg,
         date: '16 mayo 2025'
     }
 ]
 </script>
 
 <template>
-    <section class="relative bg-cover bg-center bg-no-repeat px-4 md:px-6 py-24 min-h-screen"
-        style="background-image: url('/img/blogbg.jpg');">
+    <section class="relative bg-cover bg-center bg-no-repeat px-6 py-24 min-h-[100dvh]"
+        :style="{ backgroundImage: `url(${blogBgImg})` }">
 
-        <!-- Trapezoide encabezado -->
         <div
-            class="trapezoid absolute top-0 left-1 w-[95vw] h-32 md:h-40 text-center bg-red-600 text-white px-4 py-4 md:px-10 md:py-6 flex flex-col justify-center z-10">
-            <h1 class="titulo text-4xl md:text-6xl mt-2 leading-tight">Lo que pasa en el Dohyo</h1>
-            <h2 class="subtitulo text-xl md:text-3xl text-black -mt-1">Blog_</h2>
+            class="trapezoid absolute top-0 left-10 w-[93dvw] h-40 text-center bg-red-600 text-white px-10 py-6 flex flex-col justify-center z-10">
+            <h2 class="titulo text-6xl mt-2 leading-tight">Lo que pasa en el Dohyo</h2>
+            <h3 class="subtitulo text-3xl text-black -mt-1">Blog_</h3>
         </div>
 
-        <!-- Tarjetas de posts -->
-        <div class="relative z-20 mt-20 md:mt-40 flex flex-wrap justify-center gap-10 md:gap-40 max-w-7xl mx-auto">
+        <div class="relative z-20 flex flex-wrap justify-center gap-12 max-w-7xl mx-auto mt-25">
             <div v-for="(post, index) in posts" :key="index"
                 class="w-full max-w-xs bg-white/60 backdrop-blur-md border p-4 shadow-2xl hover:scale-105 transition-all duration-300">
                 <img :src="post.cover" alt="Portada del post" class="w-full h-44 object-cover mb-3" />
                 <div class="flex flex-col h-full">
-                    <h3 class="font-anton text-xl md:text-2xl mb-2 leading-tight">
+                    <h3 class="font-anton text-2xl mb-2 leading-tight">
                         {{ post.title }}
                     </h3>
-                    <p class="font-outfit text-xs md:text-sm text-gray-700 mb-1">{{ post.date }}</p>
-                    <p class="font-outfit text-sm text-gray-800 my-2 md:my-4">
+                    <p class="font-outfit text-sm text-gray-700 mb-1">{{ post.date }}</p>
+                    <p class="font-outfit text-sm text-gray-800 my-4">
                         {{ post.excerpt }}
-                        <span class="ml-2 text-red-700 font-bold underline cursor-pointer">Leer más...</span>
+                        <a href="#" class="ml-2 text-red-700 font-bold underline">Leer más...</a>
                     </p>
                 </div>
             </div>
         </div>
 
-        <!-- Footer call-to-action -->
-        <div
-            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center w-full h-16 md:h-20 bg-red-600/90">
-            <p class="font-anton text-white pt-3 md:pt-4 text-2xl md:text-4xl">IR AL BLOG</p>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center w-full h-20 py-3 bg-red-600/90">
+            <h2 class="font-anton text-white text-6xl">IR AL BLOG</h2>
         </div>
     </section>
 </template>

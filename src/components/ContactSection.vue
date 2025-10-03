@@ -1,49 +1,47 @@
+<script setup>
+import contactBgImg from '@/assets/img/wrestler.png';
+</script>
+
 <template>
-    <section class="relative bg-cover bg-center bg-no-repeat px-6 py-24 min-h-screen"
-        style="background-image: url('/img/wrestler.png');">
+    <section class="relative bg-cover bg-center bg-no-repeat px-6  min-h-[100dvh]"
+        :style="{ backgroundImage: `url(${contactBgImg})` }">
 
         <div
-            class="absolute w-[90%] h-[140px] top-0 right-0 bg-red-600 clip-diagonal-left z-10 flex items-center justify-center shadow-xl">
-            <h1 class="text-white text-7xl font-semibold font-anton">CONTÁCTANOS</h1>
+            class="absolute w-[60%] h-[140px] top-0 right-0 bg-red-600 clip-diagonal-first-block z-10 flex items-center justify-center shadow-xl">
+            <h2 class="text-white text-7xl font-semibold font-anton leading-relaxed">CONTÁCTANOS</h2>
         </div>
 
+        <div class="relative z-20 mt-15 max-w-[100dvw] mx-auto h-[600px]">
 
-        <div class="relative z-20 mt-[180px] max-w-6xl mx-auto flex justify-between gap-6" style="height: 320px;">
-
-            <div class="bg-white/80 p-6 w-[45%] shadow-lg flex flex-col justify-between clip-diagonal-top-right"
-                style="margin-top: 0;">
-                <div>
-                    <h2 class="text-2xl text-red-600 font-bold font-anton mb-2">ESCRÍBENOS</h2>
-                    <p class="font-outfit text-lg mb-2">
-                        ¿Tienes dudas? ¿Quieres sumarte? <br>Mándanos tu mensaje!
-                    </p>
-                </div>
-                <ul class="font-outfit text-base space-y-1">
-                    <li><strong>Email:</strong> contacto@sumochile.cl</li>
-                    <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
-                    <li><strong>Instagram:</strong> @sumochile</li>
+            <div class="absolute top-0 left-0 bg-white/80 p-6 w-[45%] shadow-lg clip-diagonal-top-right">
+                <h3 class="text-2xl text-red-600 font-bold font-anton mb-2">ESCRÍBENOS</h3>
+                <p class="font-outfit text-lg mb-2">
+                    ¿Tienes dudas? ¿Quieres sumarte? <br> ¡Mándanos tu mensaje!
+                </p>
+                <ul class="font-outfit text-base space-y-1 mt-4">
+                    <li><strong>Email: </strong> contacto@sumochile.cl</li>
+                    <li><strong>Instagram: </strong>@sumochile</li>
+                    <li><strong>Facebook: </strong>Federación Chilena de Sumo.</li>
+                    <li><strong>Tiktok: </strong>@sumochile</li>
                 </ul>
             </div>
 
-            <div class="absolute right-0 top-5 bg-white/80 p-6 w-[45%]  shadow-lg flex flex-col justify-between clip-diagonal-top-left"
-                style="margin-top: 80px;">
-                <div class="container relative top-2  left-35 w-80">
-                    <div>
-                        <h2 class="text-2xl text-red-600 font-bold font-anton mb-2">FORMULARIO</h2>
-                    </div>
-                    <form class="space-y-2 font-outfit">
+            <div class="absolute bottom-0 right-0 bg-white/80 p-6 pl-44 w-[45%] shadow-lg clip-diagonal-top-left">
+                <div class="container relative w-full">
+                    <h3 class="text-2xl text-red-600 font-bold font-anton mb-2">¡Hey! Aquí también puedes contactarnos.
+                    </h3>
+                    <form class="space-y-4 font-outfit">
                         <input type="text" placeholder="Tu nombre"
-                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none" />
-                        <input type="email" placeholder="Tu correo"
-                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none" />
-                        <textarea rows="2" placeholder="Tu mensaje"
+                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
+                        <input type="email" placeholder="Tu correo electrónico"
+                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
+                        <textarea rows="4" placeholder="Tu mensaje, saludo o sugerencia"
                             class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none"></textarea>
                         <button type="submit"
                             class="px-3 py-1 bg-black text-white font-bold hover:bg-red-600 hover:text-white transition">
                             ENVIAR
                         </button>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -51,8 +49,8 @@
 </template>
 
 <style scoped>
-.clip-diagonal-left {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 60px 100%);
+.clip-diagonal-first-block {
+    clip-path: polygon(0 100%, 11.3% 0, 100% 0, 100% 100%);
 }
 
 .clip-diagonal-top-right {

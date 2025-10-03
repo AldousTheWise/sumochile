@@ -1,29 +1,59 @@
+<script setup>
+import { ref } from 'vue';
+import eventBgImg from '@/assets/img/sumito2.png';
+import logoImg from '@/assets/img/sumo.png';
+
+const eventos = ref([
+    {
+        id: 1,
+        nombre: 'Campeonato Nacional',
+        fecha: '15 de Junio'
+    },
+    {
+        id: 2,
+        nombre: 'Entrenamiento Abierto',
+        fecha: '22 de junio'
+    },
+    {
+        id: 1,
+        nombre: 'Torneo Juvenil',
+        fecha: '06 de Junio'
+    },
+    {
+        id: 1,
+        nombre: 'Exhibición Mall',
+        fecha: '15 de Junio'
+    }
+]);
+</script>
+
 <template>
-    <section class="relative bg-cover bg-center bg-no-repeat px-4 md:px-6 py-12 md:py-24 min-h-screen"
-        style="background-image: url('/img/sumito2.png');">
+    <section class="relative flex flex-col justify-between bg-cover bg-center bg-no-repeat min-h-[100dvh]"
+        :style="{ backgroundImage: `url( ${eventBgImg})` }">
 
-        <!-- Encabezado diagonal -->
-        <div
-            class="absolute top-0 left-0 bg-white/80 w-full md:w-2xl h-28 md:h-45 pl-4 md:pl-5 pt-4 md:pt-5 clip-diagonal-right">
-            <h1 class="font-anton text-2xl md:text-6xl text-red-600 font-bold leading-tight">
-                Próximos eventos y campeonatos
-            </h1>
+        <div class="relative w-full">
+            <div class="bg-white/80 w-2xl h-44 py-4 px-10 clip-diagonal-right">
+                <h2 class="font-anton text-6xl text-red-600 font-bold leading-tight">
+                    Próximos eventos y campeonatos.
+                </h2>
+            </div>
+
+            <div class="absolute top-20 right-[40%] w-60 z-20">
+                <img :src="logoImg" alt="Logo Sumo Chile" class="w-full">
+            </div>
         </div>
 
-        <!-- Logo (solo visible en desktop) -->
-        <div class="hidden md:block absolute top-15 left-140 w-60 z-20">
-            <img src="/img/sumo.png" alt="Logo Sumo Chile" class="w-full">
-        </div>
-
-        <!-- Cartelera -->
-        <div id="base" class="font-outfit text-center">
-            <h2 class="text-3xl md:text-6xl font-anton text-red-600 my-4 md:my-8 uppercase font-bold">Cartelera</h2>
-            <ul class="text-base md:text-xl leading-relaxed text-black mt-2 md:mt-2.5 space-y-2 md:space-y-3">
-                <li>Campeonato Nacional – 15 Junio</li>
-                <li>Entrenamiento Abierto – 22 Junio</li>
-                <li>Torneo Juvenil – 6 Julio</li>
-                <li>Exhibición Internacional – 20 Julio</li>
-            </ul>
+        <div class="w-full flex justify-end px-40">
+            <div id="base" class="font-outfit text-center">
+                <h3 class="text-6xl font-anton text-red-600 my-8 uppercase font-bold">
+                    Cartelera
+                </h3>
+                <ul class="text-xl leading-relaxed text-black mt-2.5 space-y-3">
+                    <li v-for="evento in eventos" :key="evento.id">
+                        <span class="font-semibold">{{ evento.nombre }}</span> - {{ evento.fecha }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
@@ -42,66 +72,22 @@
 }
 
 #base {
-    position: absolute;
-    bottom: 2rem;
-    right: 5%;
-    left: 5%;
-    width: auto;
-    max-width: 480px;
-    height: auto;
-    min-height: 300px;
+    position: relative;
+    width: 480px;
+    min-height: 350px;
     background-color: white;
-    padding: 1.5rem;
+    padding: 2rem;
     z-index: 10;
-    margin: 0 auto;
 }
 
 #base:before {
     content: "";
     position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid white;
-}
-
-/* Desktop específico */
-@media (min-width: 768px) {
-    #base {
-        right: 10%;
-        left: auto;
-        width: 480px;
-        height: 400px;
-        padding: 2rem;
-    }
-
-    #base:before {
-        top: -40px;
-        left: 0;
-        transform: none;
-        border-left: 240px solid transparent;
-        border-right: 240px solid transparent;
-        border-bottom: 40px solid white;
-    }
-}
-
-/* Ajustes para móviles pequeños */
-@media (max-width: 400px) {
-    #base {
-        bottom: 1rem;
-        padding: 1rem;
-    }
-
-    h1.font-anton {
-        font-size: 1.5rem;
-    }
-
-    #base h2 {
-        font-size: 2rem;
-    }
+    top: -40px;
+    left: 0;
+    transform: none;
+    border-left: 240px solid transparent;
+    border-right: 240px solid transparent;
+    border-bottom: 40px solid white;
 }
 </style>

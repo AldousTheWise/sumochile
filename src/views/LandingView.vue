@@ -9,7 +9,7 @@ import OutroSection from '@/components/OutroSection.vue';
 </script>
 
 <template>
-    <div class="landing-view">
+    <main class="landing-view">
         <HeroSection />
         <AboutSection />
         <BlogSection />
@@ -17,5 +17,5 @@ import OutroSection from '@/components/OutroSection.vue';
         <ServicesSection />
         <ContactSection />
         <OutroSection />
-    </div>
+    </main>
 </template>
