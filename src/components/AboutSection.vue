@@ -21,36 +21,63 @@ const secciones = [
 </script>
 
 <template>
-    <section class="relative h-[100dvh] overflow-hidden bg-black">
+    <section class="relative md:h-[100dvh] overflow-hidden bg-black">
+        <img :src="aboutImage" class="absolute inset-0 w-full h-full object-cover z-0"
+            alt="Luchadores de sumo en un evento al aire libre" />
 
-        <img :src="aboutImage" class="absolute inset-0 w-full h-full object-cover z-0" alt="Fondo" />
-
-        <div
-            class="absolute top-0 left-0 z-10 bg-white/80 py-5 px-10 clip-diagonal-right w-[60%] md:w-[60%] h-1/4 md:h-1/4">
-            <h2 class="titulo text-red-600 text-4xl md:text-7xl font-bold mt-3 md:mt-7">Quiénes Somos</h2>
-        </div>
-
-
-        <div class="hidden md:flex absolute bottom-0 z-10 w-full justify-between items-end px-10 gap-8">
-            <div class="w-1/4 bg-red-600/90 text-white p-6 self-end min-h-[400px]">
-                <h3 class="titulo text-3xl mb-2">{{ secciones[0].titulo }}</h3>
-                <p class="texto text-sm whitespace-pre-line">{{ secciones[0].texto }}</p>
+        <div class="hidden lg:block">
+            <div class="absolute top-0 left-0 z-10 bg-white/80 py-5 px-10 clip-diagonal-right w-[60%] h-1/4">
+                <h2 class="titulo text-red-600 text-7xl font-bold mt-7">Quiénes Somos</h2>
             </div>
-
-            <div class="bg-white/90 w-1/4 flex items-center gap-4 p-4 mb-10 rounded shadow-lg self-end">
-                <img :src="secciones[1].img" class="w-20 h-20 object-cover rounded-full" :alt="secciones[1].nombre" />
-                <div>
-                    <h3 class="titulo text-red-600 text-xl">{{ secciones[1].nombre }}</h3>
-                    <p class="texto text-sm text-black mt-1">{{ secciones[1].descripcion }}</p>
+            <div class="absolute bottom-0 z-10 w-full flex justify-between items-end px-10 gap-8">
+                <div class="w-1/4 bg-red-600/90 text-white p-6 self-end min-h-[400px]">
+                    <h3 class="titulo text-3xl mb-2">{{ secciones[0].titulo }}</h3>
+                    <p class="texto text-sm whitespace-pre-line">{{ secciones[0].texto }}</p>
+                </div>
+                <div class="bg-white/90 w-1/4 flex items-center gap-4 p-4 mb-10 shadow-lg self-end">
+                    <img :src="secciones[1].img" class="w-20 h-20 object-cover rounded-full"
+                        :alt="secciones[1].nombre" />
+                    <div>
+                        <h3 class="titulo text-red-600 text-xl">{{ secciones[1].nombre }}</h3>
+                        <p class="texto text-sm text-black mt-1">{{ secciones[1].descripcion }}</p>
+                    </div>
+                </div>
+                <div class="w-1/4 bg-red-600/90 text-white p-6 self-end min-h-[400px]">
+                    <h3 class="titulo text-3xl mb-2">{{ secciones[2].titulo }}</h3>
+                    <p class="texto text-sm whitespace-pre-line">{{ secciones[2].texto }}</p>
                 </div>
             </div>
-
-            <div class="w-1/4 bg-red-600/90 text-white p-6 self-end min-h-[400px]">
-                <h3 class="titulo text-3xl mb-2">{{ secciones[2].titulo }}</h3>
-                <p class="texto text-sm whitespace-pre-line">{{ secciones[2].texto }}</p>
-            </div>
         </div>
 
+        <div class="lg:hidden absolute top-0 w-full flex flex-col items-center gap-6">
+
+            <div class="w-full max-w-sm bg-white/80 p-4 clip-diagonal-right text-center">
+                <h2 class="titulo text-red-600 text-4xl md:text-5xl font-bold">Quiénes Somos</h2>
+            </div>
+
+            <div class="w-full max-w-sm md:max-w-3xl flex flex-col md:flex-row gap-4">
+
+                <div class="bg-red-600/90 text-white p-4 md:w-1/3">
+                    <h3 class="titulo text-2xl mb-2">{{ secciones[0].titulo }}</h3>
+                    <p class="texto text-sm whitespace-pre-line">{{ secciones[0].texto }}</p>
+                </div>
+
+                <div
+                    class="bg-white/90 flex items-center gap-4 p-4 shadow-lg md:w-1/3 md:flex-col md:justify-center md:text-center">
+                    <img :src="secciones[1].img" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full"
+                        :alt="secciones[1].nombre" />
+                    <div>
+                        <h3 class="titulo text-red-600 text-lg md:text-xl">{{ secciones[1].nombre }}</h3>
+                        <p class="texto text-sm text-black mt-1">{{ secciones[1].descripcion }}</p>
+                    </div>
+                </div>
+
+                <div class="bg-red-600/90 text-white p-4 md:w-1/3">
+                    <h3 class="titulo text-2xl mb-2">{{ secciones[2].titulo }}</h3>
+                    <p class="texto text-sm whitespace-pre-line">{{ secciones[2].texto }}</p>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 

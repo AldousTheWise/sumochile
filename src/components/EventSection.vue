@@ -28,29 +28,45 @@ const eventos = ref([
 </script>
 
 <template>
-    <section class="relative flex flex-col justify-between bg-cover bg-center bg-no-repeat min-h-[100dvh]"
+    <section class="relative flex flex-col justify-between bg-cover bg-center bg-no-repeat md:min-h-[100dvh]"
         :style="{ backgroundImage: `url( ${eventBgImg})` }">
+        <div class="hidden lg:block">
+            <div class="relative w-full">
+                <div class="bg-white/80 w-2xl h-44 py-4 px-10 clip-diagonal-right">
+                    <h2 class="font-anton text-6xl text-red-600 font-bold leading-tight">
+                        Próximos eventos y campeonatos.
+                    </h2>
+                </div>
 
-        <div class="relative w-full">
-            <div class="bg-white/80 w-2xl h-44 py-4 px-10 clip-diagonal-right">
-                <h2 class="font-anton text-6xl text-red-600 font-bold leading-tight">
-                    Próximos eventos y campeonatos.
-                </h2>
+                <div class="absolute top-20 right-[40%] w-60 z-20">
+                    <img :src="logoImg" alt="Logo Sumo Chile" class="w-full">
+                </div>
             </div>
 
-            <div class="absolute top-20 right-[40%] w-60 z-20">
-                <img :src="logoImg" alt="Logo Sumo Chile" class="w-full">
+            <div class="absolute bottom-0 w-full flex justify-end px-40">
+                <div id="base" class="font-outfit text-center">
+                    <h3 class="text-6xl font-anton text-red-600 my-8 uppercase font-bold">
+                        Cartelera
+                    </h3>
+                    <ul class="text-xl leading-relaxed text-black mt-2.5 space-y-3">
+                        <li v-for="evento in eventos" :key="evento.id">
+                            <span class="font-semibold">{{ evento.nombre }}</span> - {{ evento.fecha }}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="w-full flex justify-end px-40">
-            <div id="base" class="font-outfit text-center">
-                <h3 class="text-6xl font-anton text-red-600 my-8 uppercase font-bold">
-                    Cartelera
-                </h3>
-                <ul class="text-xl leading-relaxed text-black mt-2.5 space-y-3">
+        <div class="lg:hidden flex flex-col justify-center items-center max-h-auto">
+            <div class="w-full bg-white/80 p-4 clip-diagonal-right text-left mb-8">
+                <h2 class="font-anton text-4xl text-red-600 font-bold leading-tight">
+                    Próximos eventos y campeonatos.
+                </h2>
+            </div>
+            <div id="base-mobile" class="w-10/12 font-outfit text-center bg-white/80 py-6 px-1 mb-12">
+                <ul class="text-base leading-relaxed text-black space-y-2">
                     <li v-for="evento in eventos" :key="evento.id">
-                        <span class="font-semibold">{{ evento.nombre }}</span> - {{ evento.fecha }}
+                        <span class="font-semibold">{{ evento.nombre }}</span> - {{ evento.fecha }}.
                     </li>
                 </ul>
             </div>
