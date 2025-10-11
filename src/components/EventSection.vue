@@ -29,7 +29,7 @@ const eventos = ref([
 
 <template>
     <section class="relative flex flex-col justify-between bg-cover bg-center bg-no-repeat md:min-h-[100dvh]"
-        :style="{ backgroundImage: `url( ${eventBgImg})` }">
+        :style="{ backgroundImage: `url(${eventBgImg})` }">
         <div class="hidden lg:block">
             <div class="relative w-full">
                 <div class="bg-white/80 w-2xl h-44 py-4 px-10 clip-diagonal-right">
@@ -43,7 +43,7 @@ const eventos = ref([
                 </div>
             </div>
 
-            <div class="absolute bottom-0 w-full flex justify-end px-40">
+            <div class="absolute bottom-0 md:left-30 w-full flex justify-end px-40">
                 <div id="base" class="font-outfit text-center">
                     <h3 class="text-6xl font-anton text-red-600 my-8 uppercase font-bold">
                         Cartelera
@@ -57,13 +57,16 @@ const eventos = ref([
             </div>
         </div>
 
-        <div class="lg:hidden flex flex-col justify-center items-center max-h-auto">
+        <div class="lg:hidden flex flex-col justify-center items-end">
             <div class="w-full bg-white/80 p-4 clip-diagonal-right text-left mb-8">
                 <h2 class="font-anton text-4xl text-red-600 font-bold leading-tight">
                     Próximos eventos y campeonatos.
                 </h2>
             </div>
-            <div id="base-mobile" class="w-10/12 font-outfit text-center bg-white/80 py-6 px-1 mb-12">
+            <div id="base-mobile" class=" w-[10rem] md:w-5/12 font-outfit text-center  bg-white/80 py-6 px-1 mb-12">
+                <h3 class="text-6xl font-anton text-red-600 my-8 uppercase font-bold text-wrap">
+                    Fechas
+                </h3>
                 <ul class="text-base leading-relaxed text-black space-y-2">
                     <li v-for="evento in eventos" :key="evento.id">
                         <span class="font-semibold">{{ evento.nombre }}</span> - {{ evento.fecha }}.

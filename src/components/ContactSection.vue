@@ -47,41 +47,44 @@ import contactBgImg from '@/assets/img/wrestler.png';
                 </div>
             </div>
         </div>
-        <div class="lg:hidden flex flex-col items-center gap-3">
+        <div class="lg:hidden flex flex-col items-center gap-10 ">
             <div
                 class="w-full bg-red-600 clip-diagonal-first-block z-10 flex items-center justify-center shadow-xl p-6">
                 <h2 class="text-white text-5xl font-semibold font-anton">CONTÁCTANOS</h2>
             </div>
 
-            <div class="bg-white/80 p-4 w-full max-w-sm shadow-lg clip-diagonal-top-right">
-                <h3 class="text-2xl text-red-600 font-bold font-anton mb-2">ESCRÍBENOS</h3>
-                <p class="font-outfit text-base mb-2">
-                    ¿Tienes dudas? ¿Quieres sumarte? <br> ¡Mándanos tu mensaje!
-                </p>
-                <ul class="font-outfit text-sm space-y-1 mt-4">
-                    <li><strong>Email: </strong> contacto@sumochile.cl</li>
-                    <li><strong>Instagram: </strong>@sumochile</li>
-                    <li><strong>Facebook: </strong>Federación Chilena de Sumo.</li>
-                    <li><strong>Tiktok: </strong>@sumochile</li>
-                </ul>
-            </div>
+            <div class="w-full max-w-sm md:max-w-4xl flex flex-col md:flex-row gap-15 pb-8">
+                <div class="bg-white/80 p-4 w-full h-fit md:w-1/2 shadow-lg clip-diagonal-top-right">
+                    <h3 class="text-2xl text-red-600 font-bold font-anton mb-2">ESCRÍBENOS</h3>
+                    <p class="font-outfit text-base mb-2">
+                        ¿Tienes dudas? ¿Quieres sumarte? <br> ¡Mándanos tu mensaje!
+                    </p>
+                    <ul class="font-outfit text-sm space-y-1 mt-4">
+                        <li><strong>Email: </strong> contacto@sumochile.cl</li>
+                        <li><strong>Instagram: </strong>@sumochile</li>
+                        <li><strong>Facebook: </strong>Federación Chilena de Sumo.</li>
+                        <li><strong>Tiktok: </strong>@sumochile</li>
+                    </ul>
+                </div>
 
-            <div class="bg-white/80 p-2 w-full max-w-sm shadow-lg my-9">
-                <div class="p-2">
-                    <h3 class="text-xl text-red-600 font-bold font-anton mb-2">¡Hey! Aquí también puedes contactarnos.
-                    </h3>
-                    <form class="space-y-4 font-outfit">
-                        <input type="text" placeholder="Tu nombre"
-                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
-                        <input type="email" placeholder="Tu correo electrónico"
-                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
-                        <textarea rows="4" placeholder="Tu mensaje, saludo o sugerencia"
-                            class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none"></textarea>
-                        <button type="submit"
-                            class="px-3 py-1 bg-black text-white font-bold hover:bg-red-600 hover:text-white transition">
-                            ENVIAR
-                        </button>
-                    </form>
+                <div class="bg-white/80 p-2 w-full md:w-4/6 h-[59dvh] shadow-lg">
+                    <div class="p-4">
+                        <h3 class="text-xl text-red-600 font-bold font-anton mb-2">¡Hey! Aquí también puedes
+                            contactarnos.
+                        </h3>
+                        <form class="space-y-4 font-outfit">
+                            <input type="text" placeholder="Tu nombre"
+                                class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
+                            <input type="email" placeholder="Tu correo electrónico"
+                                class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none">
+                            <textarea rows="4" placeholder="Tu mensaje, saludo o sugerencia"
+                                class="w-full p-1 bg-transparent border-b-2 border-black placeholder-black focus:outline-none"></textarea>
+                            <button type="submit"
+                                class="px-3 py-1 bg-black text-white font-bold hover:bg-red-600 hover:text-white transition">
+                                ENVIAR
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

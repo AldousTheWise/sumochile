@@ -27,7 +27,7 @@ const posts = [
 </script>
 
 <template>
-    <section class="relative bg-cover bg-center bg-no-repeat px-0 lg:px-6 lg:py-24 h-[70dvh] lg:min-h-[115dvh]"
+    <section class="relative bg-cover bg-center bg-no-repeat px-0 lg:px-6 pb-15 lg:py-24 lg:min-h-[100dvh]"
         :style="{ backgroundImage: `url(${blogBgImg})` }">
         <div class="hidden lg:block">
             <div
@@ -36,9 +36,9 @@ const posts = [
                 <h3 class="text-3xl font-anton text-black -mt-1">Blog_</h3>
             </div>
 
-            <div class="relative z-20 flex flex-wrap justify-center gap-12 max-w-7xl mb-40 mt-25">
+            <div class="relative z-20 grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto mt-32">
                 <div v-for="(post, index) in posts" :key="index"
-                    class="w-full max-w-xs bg-white/60 backdrop-blur-md border p-4 shadow-2xl hover:scale-105 transition-all duration-300">
+                    class="bg-white/80 backdrop-blur-md border p-4 hover:scale-105 transition-all duration-300">
                     <img :src="post.cover" alt="Portada del post" class="w-full h-44 object-cover mb-3" />
                     <div class="flex flex-col h-full">
                         <h3 class="font-anton text-2xl mb-2 leading-tight">
@@ -59,16 +59,17 @@ const posts = [
             </div>
         </div>
 
-        <div class="lg:hidden flex flex-col h-full">
-            <div class="w-full h-32 text-center bg-red-600 text-white px-4 py-4 flex flex-col justify-center z-10">
-                <h2 class="text-4xl leading-tight font-anton">Lo que pasa en el Dohyo</h2>
-                <h3 class="text-xl text-black -mt-1 font-anton">Blog_</h3>
+        <div class="contenedor lg:hidden flex flex-col h-full">
+            <div
+                class="headliner w-full h-32 text-center bg-red-600 text-white px-4 py-4 flex flex-col justify-center z-10">
+                <h2 class="text-4xl md:text-5xl leading-tight font-anton">Lo que pasa en el Dohyo</h2>
+                <h3 class="text-xl md:text-2xl text-black -mt-1 font-anton">Blog_</h3>
             </div>
 
-            <div class="flex-grow pt-3">
+            <div class="cardbox pt-8">
                 <div class="flex overflow-x-auto py-8 px-4 gap-6 w-full snap-x snap-mandatory">
                     <div v-for="(post, index) in posts" :key="index"
-                        class="flex-shrink-0 w-[80%] max-w-xs bg-white/60 backdrop-blur-md border p-4 shadow-xl snap-center">
+                        class="flex-shrink-0 w-[80%]  max-w-xs bg-white/60 backdrop-blur-md border p-4 shadow-xl snap-center">
                         <img :src="post.cover" alt="Portada del post" class="w-full h-44 object-cover mb-3" />
                         <div>
                             <h3 class="font-anton text-xl mb-2 leading-tight">
@@ -83,8 +84,9 @@ const posts = [
                     </div>
                 </div>
             </div>
+
             <div
-                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center w-full h-15 py-3 bg-red-600/90">
+                class="final absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center w-full h-15 py-3 bg-red-600/90">
                 <h2 class="font-anton text-white text-4xl">IR AL BLOG</h2>
             </div>
         </div>
