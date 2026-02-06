@@ -57,22 +57,22 @@ src/
    git clone https://github.com/AldousTheWise/sumochile.git
    ```
    
-Entrar al proyecto:
+2. Entrar al proyecto:
 ```bash
 cd sumochile
 ```
 
-Instalar dependencias:
+3. Instalar dependencias:
 ```bash
 npm install
 ```
 
-Ejecutar en desarrollo:
+4. Ejecutar en desarrollo:
 ```bash
 npm run dev
 ```
 
-Compilar para producción:
+5. Compilar para producción:
 ```bash
 npm run build
 ```
