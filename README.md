@@ -77,10 +77,10 @@ npm run dev
 npm run build
 ```
 
-##Objetivo del proyecto
+## Objetivo del proyecto
  - Desarrollar una landing page moderna y visualmente potente para una organización deportiva, aplicando buenas prácticas de frontend, diseño responsivo y una arquitectura mantenible que permita su evolución hacia una aplicación web más compleja.
 
-##Posibles mejoras futuras
+## Posibles mejoras futuras
 - Sistema de autenticación (En desarrollo)
 - Panel administrativo (En desarrollo)
 - Gestión dinámica de contenidos
